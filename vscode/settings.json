@@ -1,0 +1,44 @@
+{
+    "liveServer.settings.donotShowInfoMsg": true,
+    "files.eol": "\n",
+    "files.insertFinalNewline": true,
+    "notebook.insertFinalNewline": true,
+    "cSpell.languageSettings": [],
+    "vim.insertModeKeyBindings": [
+        {
+            "before": [
+                "j",
+                "j"
+            ],
+            "after": [
+                "<Esc>"
+            ]
+        }
+    ],
+    "vim.hlsearch": true,
+    "vim.handleKeys": {
+        "<C-a>": false,
+        "<C-f>": false,
+        "<C-n>": false,
+        "<C-c>": false,
+        "<C-x>": false,
+        "<C-v>": false,
+        "<C-b>": true,
+        "<C-j>": false,
+        "<C-k>": false,
+        "<C-y>": false,
+        "<C-h>": false,
+        "<C-P>": false,
+        "<C-p>": false
+    },
+    "cSpell.userWords": [],
+    "go.gopath": "/Users/kojimakazuya/go",
+    "go.goroot": "/usr/local/go",
+    "extensions.ignoreRecommendations": true,
+    "github.copilot.editor.enableAutoCompletions": true,
+    "security.workspace.trust.untrustedFiles": "open",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "go.toolsGopath": "",
+    "debug.allowBreakpointsEverywhere": true,
+    "go.toolsManagement.autoUpdate": true
+}

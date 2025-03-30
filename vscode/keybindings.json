@@ -1,0 +1,82 @@
+// 既定値を上書きするには、このファイル内にキー バインドを挿入します
+[
+    {
+        "key": "ctrl+cmd+[",
+        "command": "workbench.action.moveEditorLeftInGroup"
+    },
+    {
+        "key": "ctrl+cmd+]",
+        "command": "workbench.action.moveEditorRightInGroup"
+    },
+// 新規ファイル作成
+{
+    "key": "shift+cmd+n",
+    "command": "explorer.newFile"
+  },
+  // 新規フォルダ作成
+  {
+    "key": "shift+cmd+m",
+    "command": "explorer.newFolder"
+  },
+  // dでファイルを削除
+  {
+    "key": "d",
+    "command": "deleteFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "alt+cmd+backspace",
+    "command": "-deleteFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceReadonly && !inputFocus"
+  },
+  // rでファイルのリネーム
+  {
+    "key": "r",
+    "command": "renameFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "enter",
+    "command": "-renameFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  // vで分割して開く
+  {
+    "key": "v",
+    "command": "explorer.openToSide",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  // ファイルのコピー
+  {
+    "key": "y",
+    "command": "filesExplorer.copy",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  // ファイルのペースト
+  {
+    "key": "p",
+    "command": "filesExplorer.paste",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  // shift+y で相対パスをコピー
+  {
+    "key": "shift+y",
+    "command": "copyRelativeFilePath",
+    "when": "!editorFocus"
+  },
+  {
+    "key": "shift+alt+cmd+c",
+    "command": "-copyRelativeFilePath",
+    "when": "!editorFocus"
+  },
+  {
+    "key": "shift+f",
+    "command": "scrollPageDown",
+    "when": "editorTextFocus && vim.mode == 'Normal'"
+  },
+  {
+    "key": "shift+b",
+    "command": "scrollPageUp",
+    "when": "editorTextFocus && vim.mode == 'Normal'"
+  }
+]
