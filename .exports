@@ -1,0 +1,30 @@
+# Homebrewの初期化（OSによってパスが異なる）
+if [ -d "/opt/homebrew" ]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+elif [ -d "$HOME/.linuxbrew" ]; then
+  eval "$($HOME/.linuxbrew/bin/brew shellenv)"
+elif [ -d "/home/linuxbrew/.linuxbrew" ]; then
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
+
+export LANG=ja_JP.UTF-8
+export EDITOR=vim
+
+# Node.js（nodebrew）
+export PATH=$HOME/.nodebrew/current/bin:$PATH
+
+# Python（pyenv）
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+# Go
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+
+# Java
+export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
+
+# PostgreSQL
+export PATH="/usr/local/opt/postgresql@16/bin:$PATH"

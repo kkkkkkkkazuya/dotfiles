@@ -1,0 +1,11 @@
+alias ll='ls -la'
+
+# aws-vault
+alias avk='aws-vault exec kazuya --'
+alias avw='aws-vault exec wanrun --no-session --'
+
+# Terraform
+alias tp='terraform plan'
+alias ti='terraform init'
+alias ta='terraform apply'
+alias tf='terraform'
