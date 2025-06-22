@@ -32,6 +32,8 @@ brew "harfbuzz"
 brew "librsvg"
 # Graph visualization software from AT&T and Bell Labs
 brew "graphviz"
+# GNU grep, egrep and fgrep
+brew "grep"
 # Node.js version manager
 brew "nodebrew"
 # Development kit for the Java programming language
