@@ -1,5 +1,7 @@
 tap "homebrew/services"
 tap "minio/stable"
+# All in one for **env
+brew "anyenv"
 # TIFF library and utilities
 brew "libtiff"
 # New file format for still image compression
@@ -36,10 +38,6 @@ brew "nodebrew"
 brew "openjdk@17"
 # Object-relational database system
 brew "postgresql@16", restart_service: :changed
-# Python version management
-brew "pyenv"
-# Terraform version manager inspired by rbenv
-brew "tfenv"
 # Terminal multiplexer
 brew "tmux"
 # Display directories as trees (with optional color/HTML output)
@@ -59,6 +57,7 @@ vscode "4ops.terraform"
 vscode "abusaidm.html-snippets"
 vscode "amazonwebservices.aws-toolkit-vscode"
 vscode "christian-kohler.path-intellisense"
+vscode "docker.docker"
 vscode "dsznajder.es7-react-js-snippets"
 vscode "dustypomerleau.rust-syntax"
 vscode "ecmel.vscode-html-css"
