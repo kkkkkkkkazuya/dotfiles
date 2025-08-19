@@ -40,8 +40,20 @@ for file in .exports .aliases .functions; do
   fi
 done
 
-# シンボリックリンクの作成スクリプトを実行
-if [[ -f "$dotfiles_dir/bin/link.sh" ]]; then
-  echo "Running additional link script..."
-  bash "$dotfiles_dir/bin/link.sh"
+# VSCode設定ファイルのリンク作成
+echo "Deploying VSCode configuration files..."
+vscode_user_dir="$HOME/Library/Application Support/Code/User"
+mkdir -p "$vscode_user_dir"
+
+for vscode_file in settings.json keybindings.json; do
+  if [[ -f "$dotfiles_dir/vscode/$vscode_file" ]]; then
+    echo "Linking vscode/$vscode_file to $vscode_user_dir/$vscode_file"
+    ln -sf "$dotfiles_dir/vscode/$vscode_file" "$vscode_user_dir/$vscode_file"
+  fi
+done
+
+# vim設定ファイルのリンク作成
+if [[ -f "$dotfiles_dir/vim/.vimrc" ]]; then
+  echo "Linking vim/.vimrc to $HOME/.vimrc"
+  ln -sf "$dotfiles_dir/vim/.vimrc" "$HOME/.vimrc"
 fi

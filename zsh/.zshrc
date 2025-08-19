@@ -37,8 +37,13 @@ if [[ -d $HOME/.anyenv ]]; then
   for _env in $ANYENV_TARGETS; do
     [[ -d "$ANYENV_ROOT/envs/${_env}" ]] || anyenv install -s "${_env}"
   done
+  
+  # 初回のみシェルを再起動（環境変数の再読み込みのため）
+  if [[ -z "$ANYENV_INITIALIZED" ]]; then
+    export ANYENV_INITIALIZED=1
+    exec $SHELL -l
+  fi
 fi
-exec $SHELL -l
 
 # PostgreSQL
 export PATH="/usr/local/opt/postgresql@16/bin:$PATH"
