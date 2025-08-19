@@ -18,6 +18,11 @@ fi
 export LANG=ja_JP.UTF-8
 export EDITOR=vim
 
+# セキュアな環境変数
+if [[ -f ~/.secrets.sh ]]; then
+    source ~/.secrets.sh
+fi
+
 # anyenv
 typeset -a ANYENV_TARGETS
 # 必要なenvライブラリの追加
@@ -35,13 +40,11 @@ if [[ -d $HOME/.anyenv ]]; then
 fi
 exec $SHELL -l
 
-# Go
-# export GOROOT=/usr/local/go
-# export GOPATH=$HOME/go
-# export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
-
-# Java
-# export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
-
 # PostgreSQL
 export PATH="/usr/local/opt/postgresql@16/bin:$PATH"
+
+# npm
+export PATH="$(npm config get prefix)/bin:$PATH"
+
+#n8n
+export N8N_COMMUNITY_NODES_ENABLED=true

@@ -15,3 +15,5 @@ rerun.txt
 tmp/**/*
 /tags
 Brewfile.lock.json
+.vscode
+.kiro/**

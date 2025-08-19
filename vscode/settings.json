@@ -32,8 +32,8 @@
         "<C-p>": false
     },
     "cSpell.userWords": [],
-    "go.gopath": "/Users/kojimakazuya/go",
-    "go.goroot": "/usr/local/go",
+    "go.gopath": "/Users/kojimakazuya/go/1.24.4",
+    "go.goroot": "/Users/kojimakazuya/.anyenv/envs/goenv/versions/1.24.4",
     "extensions.ignoreRecommendations": true,
     "github.copilot.editor.enableAutoCompletions": true,
     "security.workspace.trust.untrustedFiles": "open",
