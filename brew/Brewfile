@@ -20,6 +20,8 @@ brew "direnv"
 brew "docker"
 # Isolated development environments using Docker
 brew "docker-compose"
+# GitHub command-line tool
+brew "gh"
 # Distributed revision control system
 brew "git"
 # Database migrations CLI tool
@@ -44,6 +46,8 @@ brew "postgresql@16", restart_service: :changed
 brew "tmux"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
+# Extremely fast Python package installer and resolver, written in Rust
+brew "uv"
 # Internet file retriever
 brew "wget"
 # JavaScript package manager
@@ -51,17 +55,19 @@ brew "yarn"
 # MinIO Client for object storage and filesystems
 brew "minio/stable/mc"
 # Securely stores and accesses AWS credentials in a development environment
-cask "aws-vault"
+cask "aws-vault-binary"
 # Plugin for AWS CLI to start and end sessions that connect to managed instances
 cask "session-manager-plugin"
 vscode "1yib.rust-bundle"
 vscode "4ops.terraform"
 vscode "abusaidm.html-snippets"
 vscode "amazonwebservices.aws-toolkit-vscode"
+vscode "anthropic.claude-code"
 vscode "christian-kohler.path-intellisense"
 vscode "docker.docker"
 vscode "dsznajder.es7-react-js-snippets"
 vscode "dustypomerleau.rust-syntax"
+vscode "eamodio.gitlens"
 vscode "ecmel.vscode-html-css"
 vscode "esbenp.prettier-vscode"
 vscode "fill-labs.dependi"
@@ -74,11 +80,13 @@ vscode "hashicorp.terraform"
 vscode "juanblanco.solidity"
 vscode "lorenzopirro.rust-flash-snippets"
 vscode "mosapride.zenkaku"
+vscode "ms-azuretools.vscode-containers"
 vscode "ms-azuretools.vscode-docker"
 vscode "ms-ceintl.vscode-language-pack-ja"
 vscode "ms-python.debugpy"
 vscode "ms-python.python"
 vscode "ms-python.vscode-pylance"
+vscode "ms-python.vscode-python-envs"
 vscode "ms-vscode-remote.remote-containers"
 vscode "ms-vscode-remote.remote-ssh"
 vscode "ms-vscode-remote.remote-ssh-edit"

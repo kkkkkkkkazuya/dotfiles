@@ -15,6 +15,7 @@ elif [ -d "/home/linuxbrew/.linuxbrew" ]; then
   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
 
+# settings
 export LANG=ja_JP.UTF-8
 export EDITOR=vim
 
@@ -33,16 +34,10 @@ if [[ -d $HOME/.anyenv ]]; then
   export PATH="$ANYENV_ROOT/bin:$PATH"
   eval "$(anyenv init - zsh)"
 
-  # 3. 初回シェル起動時に未インストールの env を自動導入
+  # 未インストールの env を自動導入
   for _env in $ANYENV_TARGETS; do
     [[ -d "$ANYENV_ROOT/envs/${_env}" ]] || anyenv install -s "${_env}"
   done
-  
-  # 初回のみシェルを再起動（環境変数の再読み込みのため）
-  if [[ -z "$ANYENV_INITIALIZED" ]]; then
-    export ANYENV_INITIALIZED=1
-    exec $SHELL -l
-  fi
 fi
 
 # PostgreSQL
@@ -51,5 +46,8 @@ export PATH="/usr/local/opt/postgresql@16/bin:$PATH"
 # npm
 export PATH="$(npm config get prefix)/bin:$PATH"
 
-#n8n
+# n8n
 export N8N_COMMUNITY_NODES_ENABLED=true
+
+# kiro
+# [[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"

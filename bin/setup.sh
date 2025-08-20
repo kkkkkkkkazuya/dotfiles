@@ -53,7 +53,7 @@ for vscode_file in settings.json keybindings.json; do
 done
 
 # vim設定ファイルのリンク作成
-if [[ -f "$dotfiles_dir/vim/.vimrc" ]]; then
-  echo "Linking vim/.vimrc to $HOME/.vimrc"
-  ln -sf "$dotfiles_dir/vim/.vimrc" "$HOME/.vimrc"
-fi
+# if [[ -f "$dotfiles_dir/vim/.vimrc" ]]; then
+#   echo "Linking vim/.vimrc to $HOME/.vimrc"
+#   ln -sf "$dotfiles_dir/vim/.vimrc" "$HOME/.vimrc"
+# fi
