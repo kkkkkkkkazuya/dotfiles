@@ -86,3 +86,27 @@ brew bundle dump --describe --force --file=./Brewfile
 ### VS Code設定が反映されない場合
 VS Code設定ファイルは以下に配置されます：
 - macOS: `~/Library/Application Support/Code/User/`
+
+## Claude Code設定
+
+### Claude専用セットアップ
+Claude Code の設定を別途管理する場合：
+
+```bash
+./bin/claude_setup.sh
+```
+
+このスクリプトは以下のClaude設定を`~/.claude`にリンクします：
+- `claude_desktop_config.json` - Claude Desktop設定
+- `CLAUDE.md` - プロジェクト固有の指示
+- `settings.json` - Claude Code設定
+- `commands/` - カスタムコマンド
+- `hooks/` - フック設定
+
+### Claude設定の管理
+- `.claude/` ディレクトリ内のファイルを編集して設定をカスタマイズ
+- 設定変更後は `./bin/claude_setup.sh` を再実行
+- 既存設定は自動的に `.bak` ファイルとしてバックアップ
+
+## FYI
+claude hooks: https://zenn.dev/gki/articles/1ee8d78a10ede2
