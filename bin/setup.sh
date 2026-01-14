@@ -57,3 +57,11 @@ done
 #   echo "Linking vim/.vimrc to $HOME/.vimrc"
 #   ln -sf "$dotfiles_dir/vim/.vimrc" "$HOME/.vimrc"
 # fi
+
+# iTerm2設定のカスタムフォルダ設定
+echo "Configuring iTerm2 preferences..."
+if [[ -d "$dotfiles_dir/iterm2" ]]; then
+  defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "$dotfiles_dir/iterm2"
+  defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
+  echo "iTerm2 configured to load preferences from $dotfiles_dir/iterm2"
+fi
