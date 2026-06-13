@@ -1,0 +1,3 @@
+[mcp_servers.aws-documentation-mcp-server]
+command = "uvx"
+args = ["awslabs.aws-documentation-mcp-server@latest"]
