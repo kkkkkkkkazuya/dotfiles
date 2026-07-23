@@ -39,6 +39,35 @@ for source_path in "${claude_code_files[@]}"; do
     fi
 done
 
+# ディレクトリ単位のシンボリックリンク作成（~/.claude/）
+echo "Linking Claude Code directories to ~/.claude/..."
+
+# "リンク元ディレクトリ:リンク先ディレクトリ名" の形式で定義
+claude_code_dirs=(
+    "claude/global/agents:agents"
+    "claude/hooks:hooks"
+)
+
+for entry in "${claude_code_dirs[@]}"; do
+    source_dir="$dotfiles_dir/${entry%%:*}"
+    target_dir="$claude_config_dir/${entry##*:}"
+
+    if [[ ! -d "$source_dir" ]]; then
+        echo "Warning: $source_dir does not exist, skipping..."
+        continue
+    fi
+
+    # 既存の実ディレクトリはバックアップ（シンボリックリンクはそのまま貼り替え）
+    if [[ -d "$target_dir" && ! -L "$target_dir" ]]; then
+        echo "Backing up existing $target_dir to $target_dir.bak"
+        mv "$target_dir" "$target_dir.bak"
+    fi
+
+    echo "Linking ${entry%%:*} to $target_dir"
+    # -n を付けないと既存リンクの「中」にリンクが作られてしまうため注意
+    ln -sfn "$source_dir" "$target_dir"
+done
+
 # Claude Desktop設定ファイルのリンク作成（~/Library/Application Support/Claude/）
 echo "Deploying Claude Desktop configuration..."
 

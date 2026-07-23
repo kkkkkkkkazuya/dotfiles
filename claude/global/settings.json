@@ -1,4 +1,7 @@
 {
+  "env": {
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
+  },
   "permissions": {
     "allow": [
       "List(*)",
@@ -103,6 +106,7 @@
     ],
     "deny": []
   },
+  "model": "opus[1m]",
   "hooks": {
     "PreToolUse": [],
     "Notification": [
@@ -136,7 +140,27 @@
       }
     ]
   },
+  "statusLine": {
+    "type": "command",
+    "command": "ccusage statusline --visual-burn-rate emoji --context-low-threshold 60 --context-medium-threshold 90",
+    "padding": 0
+  },
+  "enabledPlugins": {
+    "claude-mem@thedotmack": true
+  },
+  "extraKnownMarketplaces": {
+    "thedotmack": {
+      "source": {
+        "source": "github",
+        "repo": "thedotmack/claude-mem"
+      }
+    }
+  },
+  "language": "Japanese",
   "alwaysThinkingEnabled": true,
+  "skipWorkflowUsageWarning": true,
   "theme": "dark",
+  "teammateMode": "in-process",
+  "remoteControlAtStartup": true,
   "agentPushNotifEnabled": true
 }
