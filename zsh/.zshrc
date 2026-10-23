@@ -46,30 +46,14 @@ zinit snippet OMZ::plugins/git/git.plugin.zsh
 export LANG=ja_JP.UTF-8
 export EDITOR=nvim
 
-# anyenv
-typeset -a ANYENV_TARGETS
-ANYENV_TARGETS=(pyenv goenv nodenv tfenv)
-
-if [[ -d $HOME/.anyenv ]]; then
-  export ANYENV_ROOT="$HOME/.anyenv"
-  export PATH="$ANYENV_ROOT/bin:$PATH"
-  eval "$(anyenv init - zsh)"
-
-  # 未インストールの env を自動導入
-  for _env in $ANYENV_TARGETS; do
-    [[ -d "$ANYENV_ROOT/envs/${_env}" ]] || anyenv install -s "${_env}"
-  done
-fi
-
 # PostgreSQL
 export PATH="/usr/local/opt/postgresql@16/bin:$PATH"
 
-# npm
-export PATH="$(npm config get prefix)/bin:$PATH"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
+# mise（ランタイムと開発ツール。設定は dotfiles/mise/config.toml）
+# --shims にする: Claude Code の Bash や MCP のような非対話の実行でも、.node-version などがフォルダごとに効く
+if command -v mise >/dev/null 2>&1; then
+  eval "$(mise activate zsh --shims)"
+fi
 
 # n8n
 export N8N_COMMUNITY_NODES_ENABLED=true
@@ -139,8 +123,6 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 ###################################################
 # 9. カスタム関数・エイリアス
 ###################################################
-# bun completions
-[ -s "/Users/kojimakazuya/.bun/_bun" ] && source "/Users/kojimakazuya/.bun/_bun"
 
 # kiro
 # [[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"

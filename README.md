@@ -22,6 +22,8 @@ cd dotfiles
   - CLI tools（git, docker, postgresql等）
   - GUI applications（aws-vault等）
   - VS Code extensions
+- `mise/config.toml`を`~/.config/mise/config.toml`にリンクし、`mise install`でランタイムと開発ツールを入れる
+- Claude Code（ネイティブ版）のインストール（未インストールの場合）
 - `zsh/`配下の設定ファイルを`~`にシンボリックリンク作成（.zshrc, .zprofile）
 - その他の設定ファイル（.exports, .aliases, .functions）をリンク
 - VS Code設定ファイル（settings.json, keybindings.json）をリンク
@@ -56,10 +58,10 @@ export OPENAI_API_KEY="your-api-key"
 
 ## 開発ツール設定
 
-### anyenv環境管理
-- anyenvによる複数言語バージョン管理
-- 自動インストール対象：pyenv, goenv, nodenv, tfenv
-- 初回起動時に未インストールのenvツールを自動導入
+### mise（ランタイムと開発ツールの管理）
+- Node・Bun・Python・Go・Rust・Java・uv・yarn・Terraform・tflint などと、global の CLI（ccusage・codex・gemini、Go のツール）を `mise/config.toml` で版を固定して管理する
+- どれを mise に入れ、どれを Homebrew に残すかの方針は `.claude/CLAUDE.md`
+- 版を上げる: `mise/config.toml` の版を書き換え → `mise install` → 使っているものを起動し直す → `mise prune`
 
 ### PostgreSQL
 - PostgreSQL 16がインストール・設定済み

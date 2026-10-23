@@ -1,0 +1,42 @@
+# mise の global 設定（~/.config/mise/config.toml へ symlink する。bin/setup.sh）
+# 方針は .claude/CLAUDE.md「ランタイムと開発ツールの管理」。版は必ず固定する（latest を書かない）
+
+[tools]
+# ランタイム
+node = "26.12.1"
+bun = "1.4.3"
+python = "3.13.17"
+go = "1.27.3"
+rust = "1.99.1"
+java = "temurin-17.0.20+101"
+
+# パッケージマネージャー
+uv = "0.13.5"
+yarn = "1.22.22"
+
+# 版をプロジェクト・CI と揃える開発ツール
+terraform = "1.17.0"
+tflint = "0.64.0"
+actionlint = "1.7.12"
+trivy = "0.76.1"
+gomigrate = "4.20.1"
+
+# global の CLI（Node の版とは別に管理される）
+"npm:ccusage" = "20.0.37"
+"npm:@openai/codex" = "0.163.0"
+"npm:@google/gemini-cli" = "0.65.0"
+
+# Go のツール（godoc は deprecated のため入れない）
+"go:github.com/go-delve/delve/cmd/dlv" = "1.27.2"
+"go:golang.org/x/tools/gopls" = "0.24.0"
+"go:honnef.co/go/tools/cmd/staticcheck" = "0.8.2"
+"go:github.com/haya14busa/goplay/cmd/goplay" = "1.0.0"
+"go:github.com/cweill/gotests/gotests" = "1.9.0"
+"go:github.com/josharian/impl" = "1.5.0"
+"go:github.com/air-verse/air" = "1.67.4"
+"go:github.com/fatih/gomodifytags" = "1.17.0"
+
+[settings]
+# リポジトリの .node-version / .python-version / .terraform-version を読む
+# go は入れない: 入れると go.mod の go ディレクティブ（最低限の版）まで読んで古い Go を選ぶ
+idiomatic_version_file_enable_tools = ["node", "python", "terraform"]

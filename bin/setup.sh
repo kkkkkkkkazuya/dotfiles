@@ -64,6 +64,21 @@ for wezterm_file in wezterm.lua keybinds.lua; do
   fi
 done
 
+# mise設定ファイルのリンク作成とツールのインストール（mise 本体は Brewfile で入る）
+echo "Deploying mise configuration files..."
+mise_config_dir="$HOME/.config/mise"
+mkdir -p "$mise_config_dir"
+ln -sf "$dotfiles_dir/mise/config.toml" "$mise_config_dir/config.toml"
+if command -v mise &> /dev/null; then
+  mise install
+fi
+
+# Claude Code（ネイティブ版。npm では入れない）
+if ! command -v claude &> /dev/null && [[ ! -x "$HOME/.local/bin/claude" ]]; then
+  echo "Installing Claude Code (native)..."
+  curl -fsSL https://claude.ai/install.sh | bash
+fi
+
 # neovim設定ファイルのリンク作成
 echo "Deploying neovim configuration files..."
 mkdir -p "$HOME/.config"

@@ -1,7 +1,7 @@
 tap "homebrew/services"
 tap "minio/stable"
-# All in one for **env
-brew "anyenv"
+# ランタイムと開発ツールのバージョン管理（設定は mise/config.toml）
+brew "mise"
 # Codec library for encoding and decoding AV1 video streams
 brew "aom"
 # Cryptography and SSL/TLS Toolkit
@@ -36,8 +36,6 @@ brew "fzf"
 brew "gh"
 # Distributed revision control system
 brew "git"
-# Database migrations CLI tool
-brew "golang-migrate"
 # Image manipulation
 brew "netpbm"
 # Library to render SVG files using Cairo
@@ -52,10 +50,6 @@ brew "imagemagick-full", link: true
 brew "jq"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
-# Node.js version manager
-brew "nodebrew"
-# Development kit for the Java programming language
-brew "openjdk@17"
 # Simplistic interactive filtering tool
 brew "peco"
 # PDF rendering library (based on the xpdf-3.0 code base)
@@ -72,12 +66,8 @@ brew "sevenzip"
 brew "tmux"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
-# Extremely fast Python package installer and resolver, written in Rust
-brew "uv"
 # Internet file retriever
 brew "wget"
-# JavaScript package manager
-brew "yarn"
 # Blazing fast terminal file manager written in Rust, based on async I/O
 brew "yazi"
 # Shell extension to navigate your filesystem faster
@@ -133,15 +123,3 @@ vscode "swellaby.rust-pack"
 vscode "tamasfe.even-better-toml"
 vscode "vscodevim.vim"
 vscode "xabikos.javascriptsnippets"
-go "github.com/go-delve/delve/cmd/dlv"
-go "github.com/haya14busa/goplay/cmd/goplay"
-go "golang.org/x/tools/gopls"
-go "github.com/cweill/gotests/gotests"
-go "github.com/josharian/impl"
-go "honnef.co/go/tools/cmd/staticcheck"
-npm "@anthropic-ai/claude-code"
-npm "@google/gemini-cli"
-npm "@notionhq/notion-mcp-server"
-npm "@openai/codex"
-npm "corepack"
-npm "wrangler"
