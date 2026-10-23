@@ -198,3 +198,4 @@ bindkey '^u' peco-cdr             # ctrl-u: ディレクトリ移動
 ###################################################
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 source /Users/kojimakazuya/.safe-chain/scripts/init-posix.sh # Safe-chain Zsh initialization script
+export PATH="$HOME/.local/bin:$PATH"
